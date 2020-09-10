@@ -9,9 +9,10 @@
 * **href** - hyperlink reference to a linked resource
 ```html
 <!DOCTYPE html>
-``` tells web browser which version of HTML is being used.
+``` 
+tells web browser which version of HTML is being used.
 
-inserts image
+![Imgur](https://i.imgur.com/zXYDN7R.jpg)
 
 ## Understanding CSS terms
 ### Selectors
