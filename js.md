@@ -37,3 +37,28 @@ myNumber.toString(2);   // returns 100000
 * object==object is always false
 * new keyword to create object
 
+## Arithmetic Operations
+
+| Symbol     | Meaning             | Example      |
+|------------|---------------------|--------------|
+| **         | Exponentiation      |              |
+| ()         | Expression grouping | (3+4)        |
+| .          | Member              | person.name  |
+| []         | Member              | person[name] |
+| ()         | Function call       | myFunction() |
+| new        | create              | new Date()   |
+| ++i        | prefix increment    |              |
+| --i        | prefix decrement    |              |
+| i++        | postfix increment   |              |
+| i--        | postfix decrement   |              |
+| !          | Logical not         | !(x==y)      |
+| typeof     | Type of             | typeof x     |
+| in         | Property in object  | 'PI' in Math |
+| instanceof | Instance of object  | instanceof   |
+| !=         | unequal             |              |
+| !==        | Strict unequal      |              |
+| &&         | Logical AND         | x&&y         |
+| \|\|       | Logical OR          | X\|\|Y       |
+| ?:         | CONDITION           | ?"yes":"no"  |
+
+
