@@ -193,7 +193,58 @@ var arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 // arr2 now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
 ```
-### 
+### Manipulate Arrays with pop()
+* `pop()` is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable. 
+* In other words, `pop()` removes the last element from an array and returns that element.
+* 
+```js
+var threeArr = [1, 4, 6];
+var oneDown = threeArr.pop();
+console.log(oneDown); // Returns 6
+console.log(threeArr); // Returns [1, 4]
+```
+### Manipulate Arrays with shift()
+* That's where `shift()` comes in. It works just like .pop(), except it **removes the first element instead of the last**
+* 
+```js
+var ourArray = ["Stimpson", "J", ["cat"]];
+var removedFromOurArray = ourArray.shift();
+// removedFromOurArray now equals "Stimpson" and ourArray now equals ["J", ["cat"]].
+
+Use the .shift() function to remove the first item from myArray, assigning the "shifted off" value to removedFromMyArray.
+
+myArray should now equal [["dog", 3]].
+
+removedFromMyArray should contain ["John", 23].
+```
+### Manipulate Arrays with unshift()
+* Not only can you `shift` elements off of the beginning of an array, you can also `unshift` elements to the beginning of an array i.e. add elements in front of the array.
+
+* `unshift()` works exactly like `.push()`, but instead of adding the element at the end of the array, `unshift()` adds the element at the beginning of the array.
+*
+```js
+var ourArray = ["Stimpson", "J", "cat"];
+ourArray.shift(); // ourArray now equals ["J", "cat"]
+ourArray.unshift("Happy");
+// ourArray now equals ["Happy", "J", "cat"]
+```
+### Javascript Functions
+*
+```js
+function functionName() {
+  console.log("Hello World");
+}
+```
+### Passing values to functions using parameter
+*
+```js
+function testFun(param1, param2) {
+  console.log(param1, param2);
+}
+```
+### Global Scope and Functions
+* In JavaScript, scope refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code.
+
 
 
 
