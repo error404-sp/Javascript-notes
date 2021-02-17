@@ -1,5 +1,6 @@
 # Javascript
-### Use of comments
+
+ ### Use of comments  
 * For one line comment - ** `//this is a comment` **
 * For multiple ines - ** `/* this is multi line comment */` **
 
