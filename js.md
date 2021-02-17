@@ -245,6 +245,70 @@ function testFun(param1, param2) {
 ### Global Scope and Functions
 * In JavaScript, scope refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code.
 
+### Local Scope and Functions Passed
+*
+```js
+function myTest() {
+  var loc = "foo";
+  console.log(loc);
+  * A function can include the return statement but it does not have to. In the case that the function doesn't have a return statement, when you call it, the function processes the inner code but the returned value is undefined
+}
+myTest(); // logs "foo"
+console.log(loc); // loc is not defined
+```
+### Return a Value from a Function with Return Passed
+```js
+function plusThree(num) {
+  return num + 3;
+}
+var answer = plusThree(5); // 8
+```
+### Understanding Undefined Value returned from a Function
+* A function can include the `return` statement but it does not have to. 
+* In the case that the function doesn't have a `return` statement, when you call it, the function processes the inner code but the returned value is `undefined`
+```js
+var sum = 0;
+function addSum(num) {
+  sum = sum + num;
+}
+addSum(3); // sum will be modified but returned value is undefined
+```
+
+### Queue
+* In Computer Science a queue is an abstract Data Structure where items are kept in order.
+*  New items can be added at the back of the queue and old items are taken off from the front of the queue.
+
+### Boolean
+* Booleans may only be one of two values: true or false.
+*  They are basically little on-off switches, where true is "on" and false is "off." These two states are mutually exclusive
+
+### Comparison with the Equality OperatorPassed
+* The most basic operator is the equality operator ==.
+*  The equality operator compares two values and returns true if they're equivalent or false if they are not.
+
+### Comparison with the Strict Equality Operator
+* Strict equality (===) is the counterpart to the equality operator (==).
+*  However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a `type` conversion.
+```js
+3 ===  3   // true
+3 === '3'  // false
+```
+### typeof operator
+```js
+typeof 3   // returns 'number'
+typeof '3' // returns 'string'
+```
+### Comparison with the Inequality Operator Passed
+```js
+1 !=  2     // true
+1 != "1"    // false
+1 != '1'    // false
+1 != true   // false
+0 != false  // false
+```
+### Comparison with the Strict Inequality OperatorPassed
+
+
 
 
 
