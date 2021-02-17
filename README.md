@@ -684,7 +684,7 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 ### Nesting For Loops
-var arr = [
+```var arr = [
   [1,2], [3,4], [5,6]
 ];
 for (var i=0; i < arr.length; i++) {
@@ -692,6 +692,28 @@ for (var i=0; i < arr.length; i++) {
     console.log(arr[i][j]);
   }
 }
+```
+### Iterate with JavaScript Do...While Loops
+* The next type of loop you will learn is called a do...while loop. It is called a do...while loop because it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true.
+```js
+var ourArray = [];
+var i = 0;
+do {
+  ourArray.push(i);
+  i++;
+} while (i < 5);
+```
+### Recursion
+```js
+  function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+```
+
 
 
 
