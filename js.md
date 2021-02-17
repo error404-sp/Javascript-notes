@@ -442,6 +442,208 @@ switch(val) {
     answer = "c";
 }
 ```
+### Returning Boolean Values from Functions
+```js
+function isEqual(a,b) {
+  if (a === b) {
+    return true;
+  } else {
+    return false;
+  }
+}
+```
+can be written as
+```js
+function isEqual(a,b) {
+  return a === b;
+}
+```
+### Return Early Pattern for Functions
+* When a return statement is reached, the execution of the current function stops and control returns to the calling location.
+```js
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();
+```
+here "byebye" is never executed.
+
+### Build JavaScript Objects
+* Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`.
+```js
+var cat = {
+  "name": "Whiskers",
+  "legs": 4,
+  "tails": 1,
+  "enemies": ["Water", "Dogs"]
+};
+```
+In this example, all the properties are stored as strings, such as - "name", "legs", and "tails"
+
+### Accessing Object Properties with Dot Notation
+* There are two ways to access the properties of an object: dot notation (.) and bracket notation ([]), similar to an array.
+* Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
+```js
+var myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+var prop1val = myObj.prop1; // val1
+var prop2val = myObj.prop2; // val2
+```
+### Accessing Object Properties with Bracket Notation
+* The second way to access the properties of an object is bracket notation ([]). 
+* If the property of the object **you are trying to access has a space in its name, you will need to use bracket notation**.
+```js
+var myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock",
+  "NoSpace": "USS Enterprise"
+};
+myObj["Space Name"]; // Kirk
+myObj['More Space']; // Spock
+myObj["NoSpace"];    // USS Enterprise
+```
+* Note that property names with spaces in them must be in quotes (single or double).
+
+### Accessing Object Properties with Variables
+* Another use of bracket notation on objects is to access a property which is stored as the value of a variable.
+*  This can be very useful for iterating through an object's properties or when accessing a lookup table.
+```js
+var dogs = {
+  Fido: "Mutt",  Hunter: "Doberman",  Snoopie: "Beagle"
+};
+var myDog = "Hunter";
+var myBreed = dogs[myDog];
+console.log(myBreed); // "Doberman"
+```
+### Updating Object Properties
+```js
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+ourDog.name = "Happy Camper";
+```
+### Add New Properties to a JavaScript Object
+* You can add new properties to existing JavaScript objects the same way you would modify them.
+```js
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.bark = "bow-wow";
+```
+### Delete Properties from a JavaScript Object
+```js
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"],
+  "bark": "bow-wow"
+};
+
+delete ourDog.bark;
+```
+### Using Objects for Lookups
+* Objects can be thought of as a **key/value storage, like a dictionary**. If you have tabular data, you can use an object to "lookup" values rather than a switch statement or an if/else chain. 
+```js
+var alpha = {
+  1:"Z",
+  2:"Y",
+  3:"X",
+  4:"W",
+  ...
+  24:"C",
+  25:"B",
+  26:"A"
+};
+alpha[2]; // "Y"
+alpha[24]; // "C"
+
+var value = 2;
+alpha[value]; // "Y"
+```
+### Testing Objects for Properties
+* Sometimes it is useful to check if the property of a given object exists or not.
+*  We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name.
+*  ` .hasOwnProperty()` returns true or false if the property is found or not.
+```js
+var myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+myObj.hasOwnProperty("top");    // true
+myObj.hasOwnProperty("middle"); // false
+```
+### Manipulating Complex Objects
+```js
+var ourMusic = [
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [ 
+      "CD", 
+      "Cassette", 
+      "LP"
+    ],
+    "gold": true
+  }
+];
+```
+### Accessing Nested Objects
+```js
+var ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+ourStorage.cabinet["top drawer"].folder2;  // "secrets"
+ourStorage.desk.drawer; // "stapler"
+```
+### Accessing Nested Arrays
+```js
+var ourPets = [
+  {
+    animalType: "cat",
+    names: [
+      "Meowzer",
+      "Fluffy",
+      "Kit-Cat"
+    ]
+  },
+  {
+    animalType: "dog",
+    names: [
+      "Spot",
+      "Bowser",
+      "Frankie"
+    ]
+  }
+];
+ourPets[0].names[1]; // "Fluffy"
+ourPets[1].names[0]; // "Spot"
+```
+### Record Collection
+
+
+
 
 
 
