@@ -306,7 +306,143 @@ typeof '3' // returns 'string'
 1 != true   // false
 0 != false  // false
 ```
-### Comparison with the Strict Inequality OperatorPassed
+### Comparison with the Strict Inequality Operator Passed
+```js
+3 !==  3   // false
+3 !== '3'  // true
+4 !==  3   // true
+```
+### Comparison with the Greater Than Operator Passed
+```js
+5   >  3   // true
+7   > '3'  // true
+2   >  3   // false
+'1' >  9   // false
+```
+### Comparison with the Greater Than Or Equal To Operator
+```js
+6   >=  6   // true
+7   >= '3'  // true
+2   >=  3   // false
+'7' >=  9   // false
+```
+### Comparison with the Less Than Operator Passed
+```js
+2   < 5  // true
+'3' < 7  // true
+5   < 5  // false
+3   < 2  // false
+'8' < 4  // false
+```
+### Comparison with the Less Than Or Equal To Operator Passed
+```js
+4   <= 5  // true
+'7' <= 7  // true
+5   <= 5  // true
+3   <= 2  // false
+'8' <= 4  // false
+```
+### Comparisons with the Logical And Operator Passed
+```js
+if (num > 5) {
+  if (num < 10) {
+    return "Yes";
+  }
+}
+return "No";
+```
+is equivalent to 
+```js
+if (num > 5 && num < 10) {
+  return "Yes";
+}
+return "No";
+```
+### Comparisons with the Logical Or Operator
+```js
+if (num > 10) {
+  return "No";
+}
+if (num < 5) {
+  return "No";
+}
+return "Yes";
+```
+is equivalent of
+```js
+if (num > 10 || num < 5) {
+  return "No";
+}
+return "Yes";
+```
+### Introducing Else Statements Passed
+```js
+if (num > 10) {
+  return "Bigger than 10";
+} else {
+  return "10 or Less";
+}
+```
+### Introducing Else If Statements Passed
+```js
+if (num > 15) {
+  return "Bigger than 15";
+} else if (num < 5) {
+  return "Smaller than 5";
+} else {
+  return "Between 5 and 15";
+}
+```
+### Selecting from Many Options with Switch Statements
+```js
+switch(lowercaseLetter) {
+  case "a":
+    console.log("A");
+    break;
+  case "b":
+    console.log("B");
+    break;
+}
+```
+### Adding a Default Option in Switch Statements
+```js
+switch (num) {
+  case value1:
+    statement1;
+    break;
+  case value2:
+    statement2;
+    break;
+...
+  default:
+    defaultStatement;
+    break;
+}
+```
+### Replacing If Else Chains with Switch
+```js
+if (val === 1) {
+  answer = "a";
+} else if (val === 2) {
+  answer = "b";
+} else {
+  answer = "c";
+}
+```
+can be replaced by
+```js
+switch(val) {
+  case 1:
+    answer = "a";
+    break;
+  case 2:
+    answer = "b";
+    break;
+  default:
+    answer = "c";
+}
+```
+
 
 
 
