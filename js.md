@@ -640,7 +640,60 @@ var ourPets = [
 ourPets[0].names[1]; // "Fluffy"
 ourPets[1].names[0]; // "Spot"
 ```
-### Record Collection
+### Iterate with JavaScript While Loops
+* The first type of loop we will learn is called a while loop because it runs "while" a specified condition is true and stops once that condition is no longer true
+```js
+var ourArray = [];
+var i = 0;
+while(i < 5) {
+  ourArray.push(i);
+  i++;
+}
+```
+### Iterate with JavaScript For Loops
+* The most common type of JavaScript loop is called a for loop because it runs "for" a specific number of times.
+* `for ([initialization]; [condition]; [final-expression])`
+```js
+var ourArray = [];
+for (var i = 0; i < 5; i++) {
+  ourArray.push(i);
+}
+```
+### Iterate Odd Numbers With a For Loop
+```js
+var ourArray = [];
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+```
+note: dont forget to declare variable :)
+
+### Count Backwards With a For Loop
+```js
+var ourArray = [];
+for (var i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+```
+### Iterate Through an Array with a For Loop
+* A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a for loop
+```js
+var arr = [10, 9, 8, 7, 6];
+for (var i = 0; i < arr.length; i++) {
+   console.log(arr[i]);
+}
+```
+### Nesting For Loops
+var arr = [
+  [1,2], [3,4], [5,6]
+];
+for (var i=0; i < arr.length; i++) {
+  for (var j=0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}
+
+
 
 
 
