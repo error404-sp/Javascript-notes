@@ -838,6 +838,23 @@ console.log(obj);
 // { name: "FreeCodeCamp", review:"Awesome"}
 ```
 ### Use Arrow Functions to Write Concise Anonymous Functions
+* In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function.
+*  Instead, we create **inline functions.**
+*   We don't need to name these functions because we do not reuse them anywhere else.
+```js
+const myFunc = function() {
+  const myVar = "value";
+  return myVar;
+}
+```
+can be wriiten as 
+```js
+const myFunc = () => {
+  const myVar = "value";
+  return myVar;
+}
+```
+using arrow functions
 
 
 
