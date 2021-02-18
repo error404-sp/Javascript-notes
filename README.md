@@ -790,6 +790,55 @@ function findGreaterOrEqual(a, b) {
     : "b is greater";
 }
 ```
+### Explore Differences Between the var and let Keywords
+```js
+var camper = 'James';
+var camper = 'David';
+console.log(camper);
+// logs 'David'
+```
+* As you can see in the code above, the camper variable is originally declared as James and then overridden to be David. 
+* In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidentally overwrite a variable that you did not intend to overwrite.
+*  Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.
+*  **A new keyword called let was introduced in ES6 to solve this potential issue with the var keyword. If you were to replace var with let in the variable declarations of the code above, the result would be an error.**
+```js
+let camper = 'James';
+let camper = 'David'; // throws an error
+```
+*  So unlike var, when using let, a variable with the same name can only be declared once. **Note the "use strict"**
+*  This enables Strict Mode, which catches common coding mistakes and "unsafe" actions.
+```js
+"use strict";
+x = 3.14; // throws an error because x is not declared
+```
+### Compare Scopes of the var and let Keywords
+* When you declare a variable with the let keyword inside a block, statement, or expression, **its scope is limited to that block, statement, or expression.**
+
+### Declare a Read-Only Variable with the const Keyword
+* `const` has all the awesome features that let has, with the added bonus that **variables declared using const are read-only**. 
+* They are a constant value, which means that once a variable is assigned with const, **it cannot be reassigned**.
+* **Note**: It is common for developers to use **uppercase variable identifiers for immutable values** and **lowercase or camelCase for mutable values **(objects and arrays)
+
+### Mutate an Array Declared with const
+* It is important to understand that objects (including arrays and functions) assigned to a variable **using const** are still mutable.
+*  Using the const declaration only prevents reassignment of the variable identifier
+
+### Prevent Object Mutation
+* To ensure your data doesn't change, JavaScript provides a function `Object.freeze` to prevent data mutation.
+* Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error
+```js
+let obj = {
+  name:"FreeCodeCamp",
+  review:"Awesome"
+};
+Object.freeze(obj);
+obj.review = "bad"; // will be ignored. Mutation not allowed
+obj.newProp = "Test"; // will be ignored. Mutation not allowed
+console.log(obj); 
+// { name: "FreeCodeCamp", review:"Awesome"}
+```
+### Use Arrow Functions to Write Concise Anonymous Functions
+
 
 
 
