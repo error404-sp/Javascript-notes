@@ -714,6 +714,83 @@ do {
     }
   }
 ```
+### Generate Random Fractions with JavaScript
+* JavaScript has a `Math.random()` function that generates a random decimal number between 0 (inclusive) and not quite up to 1 (exclusive). 
+* Thus `Math.random()` can return a `0` but never quite return a `1`
+
+### Generate Random Whole Numbers with JavaScript
+* Use Math.random() to generate a random decimal.
+* Multiply that random decimal by 20.
+* Use another function, **Math.floor() to round the number down to its nearest whole number**
+```js
+Math.floor(Math.random() * 20);
+```
+for random numbers between 0 to 19.
+
+### Generate Random Whole Numbers within a Range
+* we can generate a random whole number that falls within a range of two specific numbers.
+* To do this, we'll define a minimum number min and a maximum number max
+```js
+Math.floor(Math.random() * (max - min + 1)) + min
+```
+### Use the parseInt Function
+* The parseInt() function parses a string and returns an integer
+```js
+var a = parseInt("007");
+```
+* The above function converts the string "007" to an integer 7. 
+* If the first character in the string can't be converted into a `number`, then it returns `NaN`.
+
+### Use the parseInt Function with a Radix
+* The parseInt() function parses a string and returns an integer. 
+* It takes a second argument for the radix, which specifies the base of the number in the string.
+*  The radix can be an integer between 2 and 36
+```js
+parseInt(string, radix);
+var a = parseInt("11", 2);
+```
+### Use the Conditional (Ternary) Operator
+* The conditional operator, also called the ternary operator, can be used as a one line if-else expression.
+* `condition ? expression-if-true : expression-if-false;`
+```js
+function findGreater(a, b) {
+  if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater";
+  }
+}
+```
+can be written as
+```js
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater";
+}
+```
+### Use Multiple Conditional (Ternary) Operators
+```js
+function findGreaterOrEqual(a, b) {
+  if (a === b) {
+    return "a and b are equal";
+  }
+  else if (a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater";
+  }
+}
+```
+can be written as
+```js
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" 
+    : (a > b) ? "a is greater" 
+    : "b is greater";
+}
+```
+
 
 
 
