@@ -882,6 +882,162 @@ const greeting = (name = "Anonymous") => "Hello " + name;
 console.log(greeting("John")); // Hello John
 console.log(greeting()); // Hello Anonymous
 ```
+### Use the Rest Parameter with Function Parameters
+*  ES6 introduces the rest parameter for function parameters. 
+*  With the rest parameter, you can create functions that take a variable number of arguments.
+*  These arguments are stored in an array that can be accessed later from inside the function.
+```js
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments.
+console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.
+
+The rest parameter eliminates the need to check the args array and allows us to apply map(), filter() and reduce() on the parameters array.
+
+Modify the function sum using the rest parameter in such a way that the function sum is able to take any number of arguments and return their sum.
+
+The result of sum(0,1,2) should be 3
+
+The result of sum(1,2,3,4) should be 10
+
+The result of sum(5) should be 5
+
+The result of sum() should be 0
+
+sum should be an arrow function which uses the rest parameter syntax (...) on the args parameter.
+```
+### Use the Spread Operator to Evaluate Arrays In-Place
+* ES6 introduces the spread operator, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.
+* The spread operator makes this syntax much better to read and maintain.
+```js
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+```
+* `...arr` returns an unpacked array. In other words, it spreads the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. 
+
+### Use Destructuring Assignment to Extract Values from Objects
+* Destructuring assignment is special syntax introduced in ES6, for neatly assigning values taken directly from an object.
+```js
+const { name, age } = user;
+// name = 'John Doe', age = 34
+```
+instead of
+```js
+const user = { name: 'John Doe', age: 34 };
+
+const name = user.name; // name = 'John Doe'
+const age = user.age; // age = 34
+```
+### Use Destructuring Assignment to Assign Variables from Objects
+* Destructuring allows you to assign a new variable name when extracting values. You can do this by putting the new name after a colon when assigning the value.
+```
+const user = { name: 'John Doe', age: 34 };
+const { name: userName, age: userAge } = user;
+```
+### Use Destructuring Assignment to Assign Variables from Nested Objects
+
+```js
+const user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+
+const { johnDoe: { age, email }} = user;
+
+//or
+
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+```
+### Use Destructuring Assignment to Assign Variables from Arrays
+* ES6 makes destructuring arrays as easy as destructuring objects.
+* One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose which elements you want to assign to variables.
+* The variable a is assigned the first value of the array, and b is assigned the second value of the array. We can also access the value at any index in an array with destructuring by using commas to reach the desired index:
+```js
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b); // 1, 2
+
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c); // 1, 2, 5
+
+```
+### Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+* In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array.
+```js
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b); // 1, 2
+console.log(arr); // [3, 4, 5, 7]
+```
+### Use Destructuring Assignment to Pass an Object as a Function's Parameters
+```js
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+  // do something with these variables
+}
+```
+can be written as
+```js
+const profileUpdate = ({ name, age, nationality, location }) => {
+  /* do something with these fields */
+}
+```
+### Create Strings using Template Literals
+* A new feature of ES6 is the template literal. This is a special type of string that makes creating complex strings easier.
+* Template literals allow you to create multi-line strings and to use string interpolation features to create strings.
+```js
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+
+```
+### Write Concise Object Literal Declarations Using Object Property Shorthand
+```js
+const getMousePosition = (x, y) => ({
+  x: x,
+  y: y
+});
+```
+can be written as
+```js
+const getMousePosition = (x, y) => ({ x, y });
+```
+### Write Concise Declarative Functions with ES6
+```js
+const person = {
+  name: "Taylor",
+  sayHello: function() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+```
+can be written as
+```
+const person = {
+  name: "Taylor",
+  sayHello() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+```
+### Use class Syntax to Define a Constructor Function
+
+
+
+
+
+
+
 
 
 
