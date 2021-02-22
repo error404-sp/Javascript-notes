@@ -854,7 +854,37 @@ const myFunc = () => {
   return myVar;
 }
 ```
+can be also written as
+```js
+const myFunc = () => "value";
+```
 using arrow functions
+
+### Write Arrow Functions with Parameters
+* Just like a regular function, you can pass arguments into an arrow function.
+```js
+// doubles input value and returns it
+const doubler = (item) => item * 2;
+doubler(4); // returns 8
+
+// the same function, without the parameter parentheses
+const doubler = item => item * 2;
+
+// multiplies the first input value by the second and returns it
+const multiplier = (item, multi) => item * multi;
+multiplier(4, 2); // returns 8
+```
+### Set Default Parameters for Your Functions
+* In order to help us create more flexible functions, ES6 introduces default parameters for functions.
+```js
+const greeting = (name = "Anonymous") => "Hello " + name;
+
+console.log(greeting("John")); // Hello John
+console.log(greeting()); // Hello Anonymous
+```
+
+
+
 
 
 
