@@ -1108,7 +1108,60 @@ import { add } from './math_functions.js';
 ```js
 import { add, subtract } from './math_functions.js';
 ```
+### Use * to Import Everything from a File
+* Suppose you have a file and you wish to import all of its contents into the current file. This can be done with the import * as syntax. Here's an example where the contents of a file named math_functions.js are imported into a file in the same directory:
+```js
+import * as myMathModule from "./math_functions.js";
+```
+* The above import statement will create an object called myMathModule. This is just a variable name, you can name it anything. The object will contain all of the exports from math_functions.js in it, so you can access the functions like you would any other object property. Here's how you can use the add and subtract functions that were imported:
+```js
+myMathModule.add(2,3);
+myMathModule.subtract(5,3);
+```
+### Create an Export Fallback with export default
+* In the export lesson, you learned about the syntax referred to as a *named export*. This allowed you to make multiple functions and variables available for use in other files.
+* There is another export syntax you need to know, known as *export default*. Usually you will use this syntax if only **one value is being exported from a file.** It is also used to create a **fallback value for a file or module**.
+```js
+export default function add(x, y) {
+  return x + y;
+}
 
+// anonymous function
+export default function(x, y) {
+  return x + y;
+}
+```
+### Import a Default Export
+* In the following example, add is the default export of the math_functions.js file
+```js
+import add from "./math_functions.js";
+```
+* The syntax differs in one key place. The imported value, add, is not surrounded by curly braces ({}). add here is simply a variable name for whatever the default export of the math_functions.js file is.
+
+### Create a JavaScript Promise
+* A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously.
+*  When the task completes, you either fulfill your promise or fail to do so.
+* Promise is a constructor function, so you need to use the new keyword to create one. 
+* It takes a function, as its argument, with two parameters - **resolve and reject**. These are methods used to determine the outcome of the promise. The syntax looks like this:
+```js
+const myPromise = new Promise((resolve, reject) => {
+
+});
+```
+### Complete a Promise with resolve and reject
+* A promise has three states: **pending, fulfilled, and rejected.**
+* The promise you created in the last challenge is forever stuck in the pending state because you did not add a way to complete the promise. The resolve and reject parameters given to the promise argument are used to do this. 
+* **resolve is used when you want your promise to succeed, and reject is used when you want it to fail.**
+```js
+const myPromise = new Promise((resolve, reject) => {
+  if(condition here) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+```
+### Handle a Fulfilled Promise with then
 
 
 
