@@ -1162,6 +1162,44 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 ### Handle a Fulfilled Promise with then
+* Promises are most useful when you have a process that takes an unknown amount of time in your code (i.e. something asynchronous), often a server request. 
+* When you make a server request it takes some amount of time, and after it completes you usually want to do something with the response from the server.
+*  This can be achieved by using the then method. The then method is executed immediately after your promise is fulfilled with resolve
+```js
+myPromise.then(result => {
+  // do something with the result.
+});
+```
+### Handle a Rejected Promise with catch
+* catch is the method used when your promise has been rejected. 
+* It is executed immediately after a promise's reject method is called
+```js
+myPromise.catch(error => {
+  // do something with the error.
+});
+```
+* error is the argument passed in to the reject method.
+
+## Regular Expressions
+### Using the Test Method
+* If you want to find the word "the" in the string "The dog chased the cat", you could use the following regular expression: /the/
+* JavaScript has multiple ways to use regexes. 
+* One way to test a regex is using the .test() method. 
+* The .test() method takes the regex, applies it to a string (which is placed inside the parentheses), and returns true or false if your pattern finds something or not
+```js
+let testStr = "freeCodeCamp";
+let testRegex = /Code/;
+testRegex.test(testStr);
+// Returns true
+```
+### Match Literal Strings
+* Any other forms of "Kevin" will not match. For example, the regex /Kevin/ will not match "kevin" or "KEVIN".
+```js
+let wrongRegex = /kevin/;
+wrongRegex.test(testStr);
+// Returns false
+```
+### Match a Literal String with Different Possibilities
 
 
 
