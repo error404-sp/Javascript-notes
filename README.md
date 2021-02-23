@@ -1031,6 +1031,84 @@ const person = {
 };
 ```
 ### Use class Syntax to Define a Constructor Function
+* ES6 provides a new syntax to create objects, using the `class` keyword.
+```js
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+```
+can be written as
+```js
+class SpaceShuttle {
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+}
+const zeus = new SpaceShuttle('Jupiter');
+```
+* It should be noted that the **class keyword declares a new function, to which a constructor is added. This constructor is invoked when new is called to create a new object**.
+* UpperCamelCase should be used by convention for ES6 class names, as in SpaceShuttle used above.
+* The constructor method is a special method for creating and initializing an object created with a class. 
+
+### Use getters and setters to Control Access to an Object
+* You can obtain values from an object and set the value of a property within an object.
+* These are classically called **getters and setters**.
+* Getter functions are meant to simply **return (get) the value of an object's private variable** to the user without the user directly accessing the private variable.
+* Setter functions are meant to **modify (set) the value of an object's private variable based on the value passed into the setter function**. This change could involve calculations, or even overwriting the previous value completely.
+```js
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book('anonymous');
+console.log(novel.writer);  // anonymous
+novel.writer = 'newAuthor';
+console.log(novel.writer);  // newAuthor
+```
+* Note: Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details. Note: It is convention to precede the name of a private variable with an underscore (_)
+
+###
+* ES6 introduced a way to easily share code among JavaScript files. This involves exporting parts of a file for use in one or more other files, and importing the parts you need, where you need them. In order to take advantage of this functionality, you need to create a script in your HTML document with a type of module
+ ```js
+ <script type="module" src="filename.js"></script>
+ ```
+ * A script that uses this module type can now use the **import and export features**
+ 
+ ### Use export to Share a Code Block
+ * Imagine a file called math_functions.js that contains several functions related to mathematical operations. One of them is stored in a variable, add, that takes in two numbers and returns their sum. You want to use this function in several different JavaScript files. In order to share it with these other files, you first need to export it.
+ ```js
+ export const add = (x, y) => {
+  return x + y;
+}
+```
+also written as
+```js
+const add = (x, y) => {
+  return x + y;
+}
+
+export { add };
+```
+### Reuse JavaScript Code Using import
+* `import` allows you to choose which parts of a file or module to load
+```js
+import { add } from './math_functions.js';
+```
+* Here, import will find add in math_functions.js, import just that function for you to use, and ignore the rest. The ./ tells the import to look for the math_functions.js file in the same folder as the current file. The relative file path (./) and file extension (.js) are required when using import in this way.
+```js
+import { add, subtract } from './math_functions.js';
+```
+
 
 
 
