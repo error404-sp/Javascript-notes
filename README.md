@@ -1372,7 +1372,50 @@ let nonSpaceRegex = /\S/g;
 whiteSpace.match(nonSpaceRegex).length; // Returns 32
 ```
 ### Specify Upper and Lower Number of Matches
-* 
+* you use the plus sign `+ `to look for **one or more characters** and the asterisk `*` to look for **zero or more characters**.
+* You can specify the lower and upper number of patterns with quantity specifiers. Quantity specifiers are used with curly brackets ({ and }). You put two numbers between the curly brackets - for the lower and upper number of patterns.
+* For example, to match only the letter a appearing between 3 and 5 times in the string "ah", your regex would be /a{3,5}h/.
+```js
+let A4 = "aaaah";
+let A2 = "aah";
+let multipleA = /a{3,5}h/;
+multipleA.test(A4); // Returns true
+multipleA.test(A2); // Returns false
+```
+### Specify Only the Lower Number of Matches
+*  Sometimes you only want to specify the lower number of patterns with no upper limit.
+*  For example, to match only the string "hah" with the letter a appearing at least 3 times, your regex would be `/ha{3,}h/`.
+```js
+let A4 = "haaaah";
+let A2 = "haah";
+let A100 = "h" + "a".repeat(100) + "h";
+let multipleA = /ha{3,}h/;
+multipleA.test(A4); // Returns true
+multipleA.test(A2); // Returns false
+multipleA.test(A100); // Returns true
+```
+### Specify Exact Number of Matches
+* Sometimes you only want a specific number of matches.
+* For example, to match only the word "hah" with the letter a 3 times, your regex would be `/ha{3}h/`
+```js
+let A4 = "haaaah";
+let A3 = "haaah";
+let A100 = "h" + "a".repeat(100) + "h";
+let multipleHA = /ha{3}h/;
+multipleHA.test(A4); // Returns false
+multipleHA.test(A3); // Returns true
+multipleHA.test(A100); // Returns false
+```
+### Check for All or None
+* You can specify the possible existence of an element with a question mark, `?`. This checks for zero or one of the preceding element. You can think of this symbol as saying the previous element is **optional**.
+```js
+let american = "color";
+let british = "colour";
+let rainbowRegex= /colou?r/;
+rainbowRegex.test(american); // Returns true
+rainbowRegex.test(british); // Returns true
+```
+### Positive and Negative Lookahead
 
 
 
