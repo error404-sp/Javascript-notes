@@ -1415,7 +1415,38 @@ let rainbowRegex= /colou?r/;
 rainbowRegex.test(american); // Returns true
 rainbowRegex.test(british); // Returns true
 ```
-### Positive and Negative Lookahead
+## Debugging
+### Use the JavaScript Console to Check the Value of a Variable
+* The `console.log()` method, which "prints" the output of what's within its parentheses to the console, will likely be the most helpful debugging tool. 
+
+### Understanding the Differences between the freeCodeCamp and Browser Console
+* use console.clear
+
+### Use typeof to Check the Type of a Variable
+* You can use typeof to check the data structure, or type, of a variable
+* JavaScript recognizes six primitive (immutable) data types: Boolean, Null, Undefined, Number, String, and Symbol (new with ES6) and one type for mutable items: Object.
+*  **Note that in JavaScript, arrays are technically a type of object.**
+
+### Catch Misspelled Variable and Function Names
+* spelling mistakes
+
+### Catch Unclosed Parentheses, Brackets, Braces and Quotes
+
+### Catch Mixed Usage of Single and Double Quotes
+
+### Catch Use of Assignment Operator Instead of Equality Operator
+### Catch Missing Open and Closing Parenthesis After a Function Call
+### Catch Arguments Passed in the Wrong Order When Calling a Function
+### Catch Off By One Errors When Using Indexing
+* Off by one errors (sometimes called OBOE) crop up when you're trying to target a specific index of a string or array (to slice or access a segment), or when looping over the indices of them.
+
+### Use Caution When Reinitializing Variables Inside a Loop
+
+### Prevent Infinite Loops with a Valid Terminal Condition
+
+## Basic Data Structures
+### Use an Array to Store a Collection of Data
+* 
 
 
 
