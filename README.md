@@ -1446,7 +1446,85 @@ rainbowRegex.test(british); // Returns true
 
 ## Basic Data Structures
 ### Use an Array to Store a Collection of Data
+* All arrays have a length property, which as shown above, can be very easily accessed with the syntax Array.length
+
+### Access an Array's Contents Using Bracket Notation
+```js
+let ourVariable = ourArray[0];
+```
+* you can also set an index to a value using the same notation:
+```js
+ourArray[1] = "not b anymore";
+```
+### Add Items to an Array with push() and unshift()
+
+### Remove Items from an Array with pop() and shift()
+### Remove Items Using splice()
+* `splice()` allows us to do just that: **remove any number of consecutive elements from anywhere** in an array.
+* splice() can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of splice() are integers which represent **indexes, or positions**, of the array that splice() is being called upon. 
+```js
+let array = ['today', 'was', 'not', 'so', 'great'];
+
+array.splice(2, 2);
+// remove 2 elements beginning with the 3rd element
+// array now equals ['today', 'was', 'great']
+
+let array = ['I', 'am', 'feeling', 'really', 'happy'];
+
+let newArray = array.splice(3, 2);
+// newArray equals ['really', 'happy']
+```
+
+### Add Items Using splice()
+* You can use the third parameter, comprised of one or more element(s), to add to the array. This can be incredibly useful for quickly switching out an element, or a set of elements, for another.
+```js
+const numbers = [10, 11, 12, 12, 15];
+const startIndex = 3;
+const amountToDelete = 1;
+
+numbers.splice(startIndex, amountToDelete, 13, 14);
+// the second entry of 12 is removed, and we add 13 and 14 at the same index
+console.log(numbers);
+// returns [ 10, 11, 12, 13, 14, 15 ]
+```
+### Copy Array Items Using slice()
+* Rather than modifying an array, slice() copies or extracts a given number of elements to a new array, leaving the array it is called upon untouched. 
+* slice() takes only 2 parameters — the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). 
+```js
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+
+let todaysWeather = weatherConditions.slice(1, 3);
+// todaysWeather equals ['snow', 'sleet'];
+// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']
+```
+### Copy an Array with the Spread Operator
+```js
+let thisArray = [true, true, undefined, false, null];
+let thatArray = [...thisArray];
+// thatArray equals [true, true, undefined, false, null]
+// thisArray remains unchanged and thatArray contains the same elements as thisArray
+```
+### Combine Arrays with the Spread Operator
+```js
+let thisArray = ['sage', 'rosemary', 'parsley', 'thyme'];
+
+let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
+// thatArray now equals ['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander']
+```
+### Check For The Presence of an Element With indexOf()
+* indexOf(), that allows us to quickly and easily check for the presence of an element on an array. 
+* indexOf() takes an element as a parameter, and when called, it returns the position, or index, of that element, or -1 if the element does not exist on the array.
+```js
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
+
+fruits.indexOf('dates'); // returns -1
+fruits.indexOf('oranges'); // returns 2
+fruits.indexOf('pears'); // returns 1, the first index at which the element exists
+```
+### Iterate Through All an Array's Items Using For Loops
 * 
+
+
 
 
 
