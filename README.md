@@ -1521,8 +1521,16 @@ fruits.indexOf('dates'); // returns -1
 fruits.indexOf('oranges'); // returns 2
 fruits.indexOf('pears'); // returns 1, the first index at which the element exists
 ```
-### Iterate Through All an Array's Items Using For Loops
-* 
+### Abs 
+* To find absolute value
+```js
+Math.abs();
+```
+### Pow
+* to find power of a number
+```js
+pow(2,3); //8
+```
 
 
 
