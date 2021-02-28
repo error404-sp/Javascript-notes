@@ -1531,6 +1531,11 @@ Math.abs();
 ```js
 pow(2,3); //8
 ```
+### to uppercase 
+converts string into uppercase
+```js
+str.toUppercase();
+```
 
 
 
