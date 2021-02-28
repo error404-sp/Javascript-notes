@@ -1562,6 +1562,7 @@ console.log(Math.ceil(7.004));
 console.log(Math.ceil(-7.004));
 // expected output: -7
 ```
+https://www.codewars.com/kata/57ee4a67108d3fd9eb0000e7/train/javascript
 
 
 
