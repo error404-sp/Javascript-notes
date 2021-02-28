@@ -1547,6 +1547,21 @@ const map1 = array1.map(x => x * 2);
 console.log(map1);
 // expected output: Array [2, 8, 18, 32]
 ```
+### Math.ceil()
+* The Math.ceil() function always rounds a number up to the next largest integer.
+```js
+console.log(Math.ceil(.95));
+// expected output: 1
+
+console.log(Math.ceil(4));
+// expected output: 4
+
+console.log(Math.ceil(7.004));
+// expected output: 8
+
+console.log(Math.ceil(-7.004));
+// expected output: -7
+```
 
 
 
